@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maher Links Modern</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif;}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(270deg,#0b0b0b,#1f001f,#000033);
+    background-size: 600% 600%;
+    animation: bgMove 30s ease infinite;
+    color:#eee;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    width:380px;
+    border-radius:20px;
+    overflow:hidden;
+    background: rgba(20,20,20,0.85);
+    text-align:center;
+    box-shadow:0 0 50px rgba(255,0,100,0.5);
+    position: relative;
+}
+
+.profile img{
+    width:100%;
+    display:block;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 0 25px rgba(255,0,100,0.5);
+    transition: transform 0.4s ease;
+}
+.profile img:hover{transform: scale(1.03);}
+
+.name-box{
+    margin-top:15px;
+    margin-bottom:15px;
+    padding:12px 20px;
+    background: linear-gradient(90deg,#220022,#440044);
+    border-radius:15px;
+    color:#ff3366;
+    font-size:28px;
+    font-weight:700;
+    box-shadow:0 0 15px rgba(255,0,100,0.5);
+}
+
+.links{
+    display:flex;
+    flex-direction:column;
+    padding:0 20px 20px 20px;
+    gap:12px;
+}
+.links a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 15px;
+    border-radius:12px;
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+    background: #220022;
+    transition:0.3s;
+}
+.links a i{
+    margin-right:10px;
+    font-size:20px;
+}
+.links a:hover{
+    background: linear-gradient(90deg,#ff3366,#6600ff);
+    box-shadow:0 0 20px #ff3366,0 0 15px #6600ff;
+}
+
+footer{
+    text-align:center;
+    font-size:12px;
+    color:#aaa;
+    padding:15px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="profile">
+        <img src="my photo.jpg.jpg"alt="profile">
+    </div>
+
+    <!-- خانة الاسم -->
+    <div class="name-box">Eng Maher</div>
+
+    <div class="links">
+        <a href="https://www.facebook.com/maher.mohamed.914431" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://www.instagram.com/maher_ua07" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.tiktok.com/@maher_ua07" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+        <a href="https://wa.me/201069845776" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+    <footer>© 2026 Maher</footer>
+</div>
+
+</body>
+</html>
