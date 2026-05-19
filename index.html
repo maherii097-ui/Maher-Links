@@ -22,19 +22,21 @@
 /* 🔥 الخلفية المختارة (Black + Red Corner Glow) */
 body{
 
-    height:100vh;
+    min-height:100vh;   /* بدل height */
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
+
+    overflow-y:auto;    /* ⬅️ يسمح بالنزول */
+    overflow-x:hidden;
+
     position:relative;
 
     background:
     radial-gradient(circle at top left, rgba(255,0,0,.18), transparent 40%),
     radial-gradient(circle at bottom right, rgba(255,0,0,.12), transparent 45%),
-    #000000;
+    #000;
 }
-
 /* Glow خفيف */
 body::before{
     content:'';
