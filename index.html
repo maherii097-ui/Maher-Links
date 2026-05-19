@@ -1,107 +1,258 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maher Links Modern</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif;}
 
+<title>Eng Maher Links</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* 🔥 الخلفية المختارة (Black + Red Corner Glow) */
 body{
+
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background: linear-gradient(270deg,#0b0b0b,#1f001f,#000033);
-    background-size: 600% 600%;
-    animation: bgMove 30s ease infinite;
-    color:#eee;
-}
-
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
-
-.container{
-    width:380px;
-    border-radius:20px;
     overflow:hidden;
-    background: rgba(20,20,20,0.85);
+    position:relative;
+
+    background:
+    radial-gradient(circle at top left, rgba(255,0,0,.18), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(255,0,0,.12), transparent 45%),
+    #000000;
+}
+
+/* Glow خفيف */
+body::before{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:rgba(255,0,0,.12);
+    border-radius:50%;
+    filter:blur(200px);
+    top:-220px;
+    left:-220px;
+}
+
+body::after{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(255,0,0,.08);
+    border-radius:50%;
+    filter:blur(200px);
+    bottom:-220px;
+    right:-220px;
+}
+
+/* 🔥 الكارد */
+
+.card{
+
+    width:420px;
+
+    background:rgba(255,255,255,0.04);
+    backdrop-filter:blur(25px);
+
+    border-radius:35px;
+
+    padding:25px 35px 50px 35px; /* ⬅️ قللنا padding من فوق */
+
     text-align:center;
-    box-shadow:0 0 50px rgba(255,0,100,0.5);
-    position: relative;
+
+    position:relative;
+    z-index:2;
+
+    overflow:hidden; /* ⬅️ ده أهم سطر */
+
+    border:2px solid rgba(255,0,0,.4);
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,.25),
+    0 0 60px rgba(0,0,0,.7);
+}
+/* 🔥 الصورة */
+.profile{
+
+    width:280px;
+    height:280px;
+
+    margin:20px auto 10px auto;
+
+    border-radius:50%; /* ⬅️ دايرة */
+
+    overflow:hidden;
+
+    border:3px solid red;
+
+    box-shadow:
+    0 0 25px red,
+    0 0 60px rgba(255,0,0,.4);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
 }
 
 .profile img{
+
     width:100%;
-    display:block;
+    height:100%;
+
     object-fit:cover;
-    border-radius:15px;
-    box-shadow:0 0 25px rgba(255,0,100,0.5);
-    transition: transform 0.4s ease;
-}
-.profile img:hover{transform: scale(1.03);}
 
-.name-box{
-    margin-top:15px;
-    margin-bottom:15px;
-    padding:12px 20px;
-    background: linear-gradient(90deg,#220022,#440044);
-    border-radius:15px;
-    color:#ff3366;
-    font-size:28px;
-    font-weight:700;
-    box-shadow:0 0 15px rgba(255,0,100,0.5);
+    object-position:center;
+
+}
+/* 🔥 الاسم */
+.logo{
+
+    margin-top:25px;
+
+    font-size:50px;
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    /* نخلي "Eng" أبيض واضح و "Maher" أحمر */
+    color:white;
+
+    text-shadow:
+    0 0 10px rgba(255,0,0,.25);
+
 }
 
+/* نخلي جزء Maher أحمر لوحده */
+.logo span{
+    color:red;
+    text-shadow:
+    0 0 15px red,
+    0 0 30px rgba(255,0,0,.4);
+}
+/* الوصف */
+.desc{
+
+    color:#bbb;
+
+    margin-top:10px;
+    margin-bottom:30px;
+
+    font-size:14px;
+}
+
+/* 🔥 الأزرار */
 .links{
+
     display:flex;
     flex-direction:column;
-    padding:0 20px 20px 20px;
-    gap:12px;
+    gap:18px;
 }
+
 .links a{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:12px 15px;
-    border-radius:12px;
+
     text-decoration:none;
     color:white;
-    font-size:16px;
-    background: #220022;
-    transition:0.3s;
-}
-.links a i{
-    margin-right:10px;
-    font-size:20px;
-}
-.links a:hover{
-    background: linear-gradient(90deg,#ff3366,#6600ff);
-    box-shadow:0 0 20px #ff3366,0 0 15px #6600ff;
+
+    padding:16px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,0,0,.25);
+
+    font-weight:600;
+
+    transition:.3s;
+
+    position:relative;
+    overflow:hidden;
 }
 
-footer{
-    text-align:center;
-    font-size:12px;
-    color:#aaa;
-    padding:15px 0;
+.links a::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,0,0,.3),
+        transparent
+    );
+
+    transition:.5s;
 }
+
+.links a:hover::before{
+    left:100%;
+}
+
+.links a:hover{
+
+    transform:translateY(-4px);
+
+    background:red;
+
+    box-shadow:0 0 20px red;
+}
+
+/* الفوتر */
+.footer{
+
+    margin-top:25px;
+
+    font-size:12px;
+
+    color:#777;
+}
+
+.red{
+    color:red;
+}
+
 </style>
+
 </head>
+
 <body>
 
-<div class="container">
+<div class="card">
+
     <div class="profile">
-        <img src="my photo.jpg.jpg"alt="profile">
+        <img src="1.jpg">
     </div>
 
-    <!-- خانة الاسم -->
-    <div class="name-box">Eng Maher</div>
+    <h1 class="logo">
+        Eng Maher
+    </h1>
+
+    <p class="desc">
+        Welcome To My Social Links
+    </p>
 
     <div class="links">
         <a href="https://www.facebook.com/maher.mohamed.914431" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
@@ -110,7 +261,11 @@ footer{
         <a href="https://wa.me/201069845776" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
 
-    <footer>© 2026 Maher</footer>
+
+    <div class="footer">
+        Designed By <span class="red"> Eng Maher</span>
+    </div>
+
 </div>
 
 </body>
