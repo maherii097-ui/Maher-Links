@@ -22,7 +22,7 @@
 /* 🔥 الخلفية المختارة (Black + Red Corner Glow) */
 body{
     height:100vh;
-    overflow:hidden;
+    overflow:hidden; /* مفيش سكرول للصفحة */
 
     display:flex;
     justify-content:center;
@@ -63,14 +63,15 @@ body::after{
 .card{
 
     width:420px;
-    max-height:90vh;   /* مهم جدًا */
+    max-height:90vh;
 
-    overflow-y:auto;   /* ⬅️ ده اللي بيخلي السحب جوه الكارد */
+    overflow-y:auto;   /* ⬅️ الحركة هنا فقط */
     overflow-x:hidden;
 
-    -webkit-overflow-scrolling:touch; /* سحب ناعم على الموبايل */
-    scrollbar-width:none; /* Firefox */
-    -ms-overflow-style:none; /* Edge القديم */
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:none;
+    -ms-overflow-style:none;
 
     background:rgba(255,255,255,0.04);
     backdrop-filter:blur(25px);
@@ -82,14 +83,15 @@ body::after{
     text-align:center;
 
     position:relative;
-    z-index:2;
 
     border:2px solid rgba(255,0,0,.4);
 
-    box-shadow:
-    0 0 20px rgba(255,0,0,.25),
-    0 0 60px rgba(0,0,0,.7);
 }
+
+.card::-webkit-scrollbar{
+    display:none;
+}
+
 /* 🔥 الصورة */
 .profile{
 
