@@ -21,16 +21,12 @@
 
 /* 🔥 الخلفية المختارة (Black + Red Corner Glow) */
 body{
+    height:100vh;
+    overflow:hidden;
 
-    min-height:100vh;   /* بدل height */
     display:flex;
     justify-content:center;
     align-items:center;
-
-    overflow-y:auto;    /* ⬅️ يسمح بالنزول */
-    overflow-x:hidden;
-
-    position:relative;
 
     background:
     radial-gradient(circle at top left, rgba(255,0,0,.18), transparent 40%),
@@ -67,20 +63,26 @@ body::after{
 .card{
 
     width:420px;
+    max-height:90vh;   /* مهم جدًا */
+
+    overflow-y:auto;   /* ⬅️ ده اللي بيخلي السحب جوه الكارد */
+    overflow-x:hidden;
+
+    -webkit-overflow-scrolling:touch; /* سحب ناعم على الموبايل */
+    scrollbar-width:none; /* Firefox */
+    -ms-overflow-style:none; /* Edge القديم */
 
     background:rgba(255,255,255,0.04);
     backdrop-filter:blur(25px);
 
     border-radius:35px;
 
-    padding:25px 35px 50px 35px; /* ⬅️ قللنا padding من فوق */
+    padding:25px 35px;
 
     text-align:center;
 
     position:relative;
     z-index:2;
-
-    overflow:hidden; /* ⬅️ ده أهم سطر */
 
     border:2px solid rgba(255,0,0,.4);
 
