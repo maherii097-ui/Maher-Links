@@ -19,21 +19,26 @@
     font-family:'Poppins',sans-serif;
 }
 
-/* 🔥 الخلفية المختارة (Black + Red Corner Glow) */
-body{
-    height:100vh;
-    overflow:hidden; /* مفيش سكرول للصفحة */
-
+/* 🔥 قفل الصفحة نهائي + منع السحب خارج الكارد */
+html, body{
+    height:100%;
+    overflow:hidden;
+    overscroll-behavior:none; /* مهم جدًا للموبايل */
+    background:#000;
     display:flex;
     justify-content:center;
     align-items:center;
+}
 
+/* الخلفية */
+body{
     background:
     radial-gradient(circle at top left, rgba(255,0,0,.18), transparent 40%),
     radial-gradient(circle at bottom right, rgba(255,0,0,.12), transparent 45%),
     #000;
 }
-/* Glow خفيف */
+
+/* Glow */
 body::before{
     content:'';
     position:absolute;
@@ -59,13 +64,12 @@ body::after{
 }
 
 /* 🔥 الكارد */
-
 .card{
 
     width:420px;
     max-height:90vh;
 
-    overflow-y:auto;   /* ⬅️ الحركة هنا فقط */
+    overflow-y:auto;
     overflow-x:hidden;
 
     -webkit-overflow-scrolling:touch;
@@ -92,7 +96,7 @@ body::after{
     display:none;
 }
 
-/* 🔥 الصورة */
+/* الصورة */
 .profile{
 
     width:280px;
@@ -100,7 +104,7 @@ body::after{
 
     margin:20px auto 10px auto;
 
-    border-radius:50%; /* ⬅️ دايرة */
+    border-radius:50%;
 
     overflow:hidden;
 
@@ -117,16 +121,13 @@ body::after{
 }
 
 .profile img{
-
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     object-position:center;
-
 }
-/* 🔥 الاسم */
+
+/* الاسم */
 .logo{
 
     margin-top:25px;
@@ -136,7 +137,6 @@ body::after{
 
     letter-spacing:2px;
 
-    /* نخلي "Eng" أبيض واضح و "Maher" أحمر */
     color:white;
 
     text-shadow:
@@ -144,27 +144,23 @@ body::after{
 
 }
 
-/* نخلي جزء Maher أحمر لوحده */
 .logo span{
     color:red;
     text-shadow:
     0 0 15px red,
     0 0 30px rgba(255,0,0,.4);
 }
+
 /* الوصف */
 .desc{
-
     color:#bbb;
-
     margin-top:10px;
     margin-bottom:30px;
-
     font-size:14px;
 }
 
-/* 🔥 الأزرار */
+/* links */
 .links{
-
     display:flex;
     flex-direction:column;
     gap:18px;
@@ -192,24 +188,18 @@ body::after{
 }
 
 .links a::before{
-
     content:'';
-
     position:absolute;
-
     top:0;
     left:-100%;
-
     width:100%;
     height:100%;
-
     background:linear-gradient(
         90deg,
         transparent,
         rgba(255,0,0,.3),
         transparent
     );
-
     transition:.5s;
 }
 
@@ -218,21 +208,15 @@ body::after{
 }
 
 .links a:hover{
-
     transform:translateY(-4px);
-
     background:red;
-
     box-shadow:0 0 20px red;
 }
 
-/* الفوتر */
+/* footer */
 .footer{
-
     margin-top:25px;
-
     font-size:12px;
-
     color:#777;
 }
 
@@ -253,7 +237,7 @@ body::after{
     </div>
 
     <h1 class="logo">
-        Eng Maher
+        Eng <span>Maher</span>
     </h1>
 
     <p class="desc">
@@ -261,15 +245,14 @@ body::after{
     </p>
 
     <div class="links">
-        <a href="https://www.facebook.com/maher.mohamed.914431" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-        <a href="https://www.instagram.com/maher_ua07" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.tiktok.com/@maher_ua07" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-        <a href="https://wa.me/201069845776" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.facebook.com/maher.mohamed.914431" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/maher_ua07" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@maher_ua07" target="_blank">TikTok</a>
+        <a href="https://wa.me/201069845776" target="_blank">WhatsApp</a>
     </div>
 
-
     <div class="footer">
-        Designed By <span class="red"> Eng Maher</span>
+        Designed By <span class="red">Eng Maher</span>
     </div>
 
 </div>
