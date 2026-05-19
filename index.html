@@ -17,9 +17,11 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+
+    -webkit-tap-highlight-color:transparent; /* تحسين الموبايل */
 }
 
-/* 🔥 قفل الصفحة بالكامل */
+/* 🔥 قفل الصفحة */
 html, body{
     height:100%;
     margin:0;
@@ -39,7 +41,7 @@ body{
     #000;
 }
 
-/* Glow */
+/* Glow خفيف */
 body::before{
     content:'';
     position:absolute;
@@ -64,7 +66,7 @@ body::after{
     right:-220px;
 }
 
-/* 🔥 الكارد */
+/* 🔥 الكارد (أسرع) */
 .card{
 
     width:420px;
@@ -79,7 +81,9 @@ body::after{
     -ms-overflow-style:none;
 
     background:rgba(255,255,255,0.04);
-    backdrop-filter:blur(25px);
+
+    /* 🔥 خففنا الـ blur عشان السرعة */
+    backdrop-filter:blur(10px);
 
     border-radius:35px;
 
@@ -90,13 +94,15 @@ body::after{
     position:relative;
 
     border:2px solid rgba(255,0,0,.4);
+
+    will-change:transform;
 }
 
 .card::-webkit-scrollbar{
     display:none;
 }
 
-/* الصورة */
+/* الصورة (أخف) */
 .profile{
 
     width:280px;
@@ -110,9 +116,7 @@ body::after{
 
     border:3px solid red;
 
-    box-shadow:
-    0 0 25px red,
-    0 0 60px rgba(255,0,0,.4);
+    box-shadow:0 0 20px red;
 
     display:flex;
     justify-content:center;
@@ -138,15 +142,12 @@ body::after{
 
     color:white;
 
-    text-shadow:
-    0 0 10px rgba(255,0,0,.25);
+    text-shadow:0 0 10px rgba(255,0,0,.25);
 }
 
 .logo span{
     color:red;
-    text-shadow:
-    0 0 15px red,
-    0 0 30px rgba(255,0,0,.4);
+    text-shadow:0 0 15px red;
 }
 
 /* الوصف */
@@ -179,7 +180,7 @@ body::after{
 
     font-weight:600;
 
-    transition:.3s;
+    transition:0.15s ease;
 
     position:relative;
     overflow:hidden;
@@ -198,7 +199,7 @@ body::after{
         rgba(255,0,0,.3),
         transparent
     );
-    transition:.5s;
+    transition:.4s;
 }
 
 .links a:hover::before{
@@ -206,9 +207,12 @@ body::after{
 }
 
 .links a:hover{
-    transform:translateY(-4px);
+
+    transform:translateY(-2px);
+
     background:red;
-    box-shadow:0 0 20px red;
+
+    box-shadow:0 0 10px red;
 }
 
 /* الفوتر */
