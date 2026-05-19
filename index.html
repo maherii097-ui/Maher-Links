@@ -19,19 +19,20 @@
     font-family:'Poppins',sans-serif;
 }
 
-/* 🔥 قفل الصفحة نهائي + منع السحب خارج الكارد */
+/* 🔥 قفل الصفحة بالكامل */
 html, body{
     height:100%;
+    margin:0;
     overflow:hidden;
-    overscroll-behavior:none; /* مهم جدًا للموبايل */
-    background:#000;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    overscroll-behavior:none;
 }
 
 /* الخلفية */
 body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
     background:
     radial-gradient(circle at top left, rgba(255,0,0,.18), transparent 40%),
     radial-gradient(circle at bottom right, rgba(255,0,0,.12), transparent 45%),
@@ -89,7 +90,6 @@ body::after{
     position:relative;
 
     border:2px solid rgba(255,0,0,.4);
-
 }
 
 .card::-webkit-scrollbar{
@@ -117,7 +117,6 @@ body::after{
     display:flex;
     justify-content:center;
     align-items:center;
-
 }
 
 .profile img{
@@ -141,7 +140,6 @@ body::after{
 
     text-shadow:
     0 0 10px rgba(255,0,0,.25);
-
 }
 
 .logo span{
@@ -159,7 +157,7 @@ body::after{
     font-size:14px;
 }
 
-/* links */
+/* الروابط */
 .links{
     display:flex;
     flex-direction:column;
@@ -213,7 +211,7 @@ body::after{
     box-shadow:0 0 20px red;
 }
 
-/* footer */
+/* الفوتر */
 .footer{
     margin-top:25px;
     font-size:12px;
