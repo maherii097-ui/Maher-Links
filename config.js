@@ -10,6 +10,7 @@ const profile = {
 const socialLinks = [
   { name: "WhatsApp", username: "", url: "https://wa.me/201069845776", icon: "whatsapp", color: "#25D366" },
   { name: "TikTok", username: "", url: "https://tiktok.com/@maher_ua07", icon: "tiktok", color: "#ffffff" },
+  { name: "Snapchat", username: "", url: "https://www.snapchat.com/add/maher_ua07", icon: "snapchat", color: "#FFFC00" },
   { name: "Instagram", username: "", url: "https://instagram.com/maher_ua07", icon: "instagram", color: "#ff4d6d" },
   { name: "Facebook", username: "", url: "https://facebook.com/maher.mohamed.914431", icon: "facebook", color: "#3B82F6" }
 ];
